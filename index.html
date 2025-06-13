@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio de Documentación</title>
+    <meta name="description" content="Sitio web de documentación con diseño moderno">
+    
+    <!-- Fuentes e iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Botón de menú móvil -->
+    <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar de navegación -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fas fa-book"></i> Navegación</h3>
+            <button class="close-sidebar" onclick="toggleSidebar()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-content">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar..." onkeyup="searchContent()">
+                <i class="fas fa-search"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#capitulos">Capítulos</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Overlay para cerrar sidebar en móvil -->
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Sección Hero -->
+    <section class="hero-section" id="inicio">
+        <div class="hero-content">
+            <h1 class="hero-title">Mi Documentación</h1>
+            <p class="hero-subtitle">Una guía completa y moderna para [tu tema]</p>
+            <div class="hero-buttons">
+                <a href="#capitulos" class="btn btn-primary">Comenzar</a>
+                <a href="#recursos" class="btn btn-secondary">Recursos</a>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Capítulos -->
+    <section class="chapters-section" id="capitulos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Capítulos</h2>
+                <p class="section-subtitle">Explora el contenido organizado por temas</p>
+            </div>
+            
+            <div class="chapters-grid">
+                <!-- Capítulo 1 -->
+                <div class="chapter-card" data-chapter="1">
+                    <div class="chapter-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <span class="chapter-number">01</span>
+                    <h3 class="chapter-title">Introducción</h3>
+                    <p class="chapter-description">
+                        Conceptos básicos y fundamentos necesarios para comenzar
+                    </p>
+                    <div class="chapter-meta">
+                        <span class="reading-time">
+                            <i class="fas fa-clock"></i> 10 min
+                        </span>
+                        <span class="difficulty easy">Fácil</span>
+                    </div>
+                    <a href="chapters/chapter1.html" class="chapter-link">
+                        Leer capítulo <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Capítulo 2 -->
+                <div class="chapter-card" data-chapter="2">
+                    <div class="chapter-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <span class="chapter-number">02</span>
+                    <h3 class="chapter-title">Configuración</h3>
+                    <p class="chapter-description">
+                        Aprende a configurar tu entorno de trabajo paso a paso
+                    </p>
+                    <div class="chapter-meta">
+                        <span class="reading-time">
+                            <i class="fas fa-clock"></i> 15 min
+                        </span>
+                        <span class="difficulty medium">Intermedio</span>
+                    </div>
+                    <a href="chapters/chapter2.html" class="chapter-link">
+                        Leer capítulo <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Capítulo 3 -->
+                <div class="chapter-card" data-chapter="3">
+                    <div class="chapter-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <span class="chapter-number">03</span>
+                    <h3 class="chapter-title">Desarrollo</h3>
+                    <p class="chapter-description">
+                        Técnicas avanzadas y mejores prácticas de desarrollo
+                    </p>
+                    <div class="chapter-meta">
+                        <span class="reading-time">
+                            <i class="fas fa-clock"></i> 25 min
+                        </span>
+                        <span class="difficulty hard">Avanzado</span>
+                    </div>
+                    <a href="chapters/chapter3.html" class="chapter-link">
+                        Leer capítulo <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Añade más capítulos siguiendo el mismo patrón -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Recursos -->
+    <section class="resources-section" id="recursos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recursos Adicionales</h2>
+                <p class="section-subtitle">Herramientas y materiales complementarios</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <i class="fas fa-download"></i>
+                    <h4>Descargas</h4>
+                    <p>Archivos y ejemplos de código</p>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-link"></i>
+                    <h4>Enlaces útiles</h4>
+                    <p>Referencias externas relevantes</p>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h4>FAQ</h4>
+                    <p>Preguntas frecuentes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mi Sitio de Documentación. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
