@@ -1,0 +1,389 @@
+/* Estilos específicos para páginas de capítulos */
+
+/* Navegación del capítulo */
+.chapter-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-home {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-home:hover {
+    color: var(--primary-dark);
+}
+
+.nav-progress {
+    flex: 1;
+    max-width: 300px;
+    margin: 0 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.nav-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-btn:hover {
+    background: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+/* Tabla de contenidos */
+.table-of-contents {
+    position: fixed;
+    top: 80px;
+    right: -350px;
+    width: 350px;
+    max-height: calc(100vh - 100px);
+    background: var(--bg-white);
+    box-shadow: var(--shadow-xl);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    z-index: 99;
+}
+
+.table-of-contents.active {
+    right: 1rem;
+}
+
+.toc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.toc-header h4 {
+    margin: 0;
+    color: var(--text-dark);
+}
+
+.toc-close {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.toc-close:hover {
+    background: var(--border-color);
+    color: var(--text-dark);
+}
+
+.toc-content {
+    padding: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.toc-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.toc-content li {
+    margin-bottom: 0.5rem;
+}
+
+.toc-content a {
+    display: block;
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: var(--transition);
+}
+
+.toc-content a:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.toc-content .toc-level-2 {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+}
+
+.toc-content .toc-level-3 {
+    margin-left: 2rem;
+    font-size: 0.75rem;
+}
+
+/* Contenido del capítulo */
+.chapter-content {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.content-container {
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    box-shadow: var(--shadow-md);
+}
+
+/* Estilos para el contenido del notebook */
+.chapter-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.chapter-content h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 2.5rem 0 1rem 0;
+    position: relative;
+}
+
+.chapter-content h2::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0.5rem;
+    width: 4px;
+    height: 2rem;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.chapter-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 2rem 0 1rem 0;
+}
+
+.chapter-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.chapter-content ul,
+.chapter-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+.chapter-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Celdas de código */
+.chapter-content .highlight,
+.chapter-content pre {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.chapter-content code {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+}
+
+/* Outputs de celdas */
+.chapter-content .output {
+    background: var(--bg-light);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Gráficos y figuras */
+.chapter-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    margin: 2rem 0;
+}
+
+.chapter-content figure {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.chapter-content figcaption {
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* Navegación entre capítulos */
+.chapter-navigation {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.chapter-navigation .nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.chapter-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: var(--transition);
+    flex: 1;
+    max-width: 300px;
+}
+
+.chapter-nav-link:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.chapter-nav-link.prev {
+    text-align: left;
+}
+
+.chapter-nav-link.next {
+    text-align: right;
+    margin-left: auto;
+}
+
+.nav-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+}
+
+.nav-title {
+    display: block;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* Responsive para capítulos */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-progress {
+        margin: 0;
+        max-width: none;
+    }
+    
+    .table-of-contents {
+        width: calc(100vw - 2rem);
+        right: -100vw;
+    }
+    
+    .table-of-contents.active {
+        right: 1rem;
+    }
+    
+    .content-container {
+        padding: 2rem 1.5rem;
+    }
+    
+    .chapter-navigation .nav-container {
+        flex-direction: column;
+    }
+    
+    .chapter-nav-link {
+        max-width: none;
+    }
+    
+    .chapter-nav-link.next {
+        margin-left: 0;
+    }
+}
